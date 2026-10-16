@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --accent: #4f46e5;
+
+  /* sugar-high syntax colors */
+  --sh-class: #7dd3fc;
+  --sh-identifier: #e2e8f0;
+  --sh-sign: #94a3b8;
+  --sh-property: #93c5fd;
+  --sh-entity: #c4b5fd;
+  --sh-jsxliterals: #f1f5f9;
+  --sh-string: #86efac;
+  --sh-keyword: #f9a8d4;
+  --sh-comment: #64748b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0b1120;
+    --foreground: #e2e8f0;
+    --card: #111827;
+    --muted: #94a3b8;
+    --border: #1f2937;
+    --accent: #818cf8;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+.prose-tut p {
+  line-height: 1.7;
+  margin-block: 0.75rem;
+}
+
+.prose-tut code:not(pre code) {
+  font-family: var(--font-geist-mono);
+  font-size: 0.875em;
+  padding: 0.1rem 0.35rem;
+  border-radius: 0.25rem;
+  background: color-mix(in oklab, var(--accent) 12%, transparent);
+}
+
+.prose-tut ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin-block: 0.75rem;
+}
+
+.prose-tut li {
+  margin-block: 0.35rem;
+  line-height: 1.6;
 }

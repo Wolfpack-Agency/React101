@@ -5,6 +5,13 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  {
+    rules: {
+      // Team convention: `interface` for object shapes, `type` for everything else
+      // (unions, primitives, mapped types...). Auto-fixable with `npm run lint -- --fix`.
+      "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+    },
+  },
   // Override default ignores of eslint-config-next.
   globalIgnores([
     // Default ignores of eslint-config-next:
